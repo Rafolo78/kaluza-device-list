@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import DeviceCard from '../deviceCard/DeviceCard';
+import { mapNameToType } from '../../state/ducks/devices';
 import { filters } from '../../state/ducks/filters';
 
 const getVisibleDevices = (devices, filter) => {
@@ -25,8 +26,23 @@ const DeviceList = (props) => {
   // TODO: Display a spinner while props.deviceListLoading = true
   // TODO: Display error message is props.errorLoading
   // TODO: Add empty state if props.deviceList.length == 0
-  const visibleDevices = getVisibleDevices(props.deviceList, props.filter)
-  const devicesNodes = visibleDevices.map((device, index) => <DeviceCard key={index} {...device}/>);
+  let devices = props.deviceList;
+  if (props.typeDisplayed) {
+    devices = devices.filter(d => d.type === props.typeDisplayed);
+  }
+  const visibleDevices = getVisibleDevices(devices, props.filter)
+  const devicesNodes = visibleDevices.map((device, index) => {
+    const deviceName = mapNameToType[device.type];
+    return (
+      <DeviceCard
+        key={index}
+        name={deviceName}
+        {...device}
+      />
+    );
+  });
+
+
   return (
       <div>
         {devicesNodes}
@@ -38,7 +54,8 @@ DeviceList.propTypes = {
   deviceList: PropTypes.array,
   deviceListLoading: PropTypes.bool,
   errorLoading: PropTypes.object,
-  filter: PropTypes.string
+  filter: PropTypes.string,
+  typeDisplayed: PropTypes.string
 };
 
 
@@ -47,6 +64,7 @@ const mapStateToProps = state => {
     deviceList: state.devices.devices,
     deviceListLoading: state.devices.loading,
     errorLoading: state.devices.error,
+    typeDisplayed: state.devices.typeDisplayed,
     filter: state.filters.filter
   }
 }

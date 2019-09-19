@@ -3,8 +3,9 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux';
 import { fetchDevices } from '../state/ducks/devices';
 import DeviceList from '../components/deviceList/DeviceList';
+import DeviceMenu from '../components/deviceMenu/DeviceMenu';
 import ConnectionFilter from '../components/connectionFilter/ConnectionFilter';
-import { Layout, MenuColumn, MainColumn, TopBar, Content } from './DeviceListPageStyledComponents';
+import { Layout, MenuColumn, MainColumn, TopBar, Content, MainLogo } from './DeviceListPageStyledComponents';
 
 class DeviceListPage extends React.Component {
   componentDidMount() {
@@ -15,7 +16,10 @@ class DeviceListPage extends React.Component {
     return (
         <Layout>
           <MenuColumn>
-            Columna
+            <div>
+              <MainLogo />
+              <DeviceMenu />
+            </div>
           </MenuColumn>
           <MainColumn>
             <TopBar>

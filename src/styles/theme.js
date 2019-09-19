@@ -1,4 +1,7 @@
 export const ThemeKaluza = {
+  fontFamilyText: "'Open Sans', sans-serif",
+  fontSize: "1.1em",
+  lineHeight: "1.40",
   mainBgColor: "#061B32",
   lightColorText: "#8FA1BD",
   onLineColor: "#00bb00",

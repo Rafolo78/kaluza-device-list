@@ -4,12 +4,18 @@ const FETCH_SUCCESS = 'kaluza-device-list/devices/FETCH_SUCCESS';
 const FETCH_FAILURE = 'kaluza-device-list/devices/FETCH_FAILURE';
 const CHANGE_TYPE = 'kaluza-device-list/devices/CHANGE_TYPE';
 
+//NOTE: the name of the device should come from the backend
+export const mapNameToType = {
+  SMART_CHARGER: "Smart Charger",
+  V2G_CHARGER: "V2G Charger"
+};
+
 // Initial state
 const initialState = {
   devices: [],
   loading: false,
   error: null,
-  typeDisplayed: ""
+  typeDisplayed: null
 }
 
 // Actions creators
