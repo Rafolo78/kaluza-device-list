@@ -16,7 +16,7 @@ const DeviceCard = (props) => {
   const {name, type, id, isOnline, lastPacketTime, stateOfCharge} = props;
   const formatLastPacketTime = moment(lastPacketTime).format(config.dateFormat);
   const onlineText= isOnline ? "Online" : "Offline";
-  const chargeNode = stateOfCharge ?
+  const chargeNode = (stateOfCharge && isOnline) ?
     <Charge>{stateOfCharge}%</Charge> :
     null;
   return (
