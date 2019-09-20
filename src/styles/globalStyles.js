@@ -13,6 +13,7 @@ export const GlobalStyle = createGlobalStyle`
     line-height: ${props => props.theme.lineHeight};
     height: 100vh;
     background: ${props => props.theme.mainBgColor};
+    color: ${props => props.theme.textColor};
   }
 
   * {

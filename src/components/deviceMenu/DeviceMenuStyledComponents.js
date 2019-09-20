@@ -15,4 +15,9 @@ export const MenuEntry = styled.li`
   &:last-of-type {
     border-bottom: 1px solid rgba(255,255,255, 0.15);
   }
+  transition: all .3s;
+  &:hover {
+    background-color: ${props => props.theme.menuHoverColor};
+    color: ${props => props.theme.mainBgColor};
+  }
 `;

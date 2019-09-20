@@ -1,3 +1,5 @@
+import config from "../../config";
+
 // Actions names
 const FETCH_BEGIN = 'kaluza-device-list/devices/FETCH_BEGIN';
 const FETCH_SUCCESS = 'kaluza-device-list/devices/FETCH_SUCCESS';
@@ -28,7 +30,7 @@ export const changeTypeDevices = deviceType => ({type: CHANGE_TYPE, payload: dev
 //redux-thunk Action creator
 export const fetchDevices = () => dispatch => {
   dispatch(fetchBeginDevices());
-  fetch('http://localhost:8080/devices')
+  fetch(config.gateWays.kaluzaDevices)
         .then(res => res.json())
         .then(res => {
             if(res.error) {

@@ -4,6 +4,8 @@ export const ThemeKaluza = {
   lineHeight: "1.40",
   mainBgColor: "#061B32",
   lightColorText: "#8FA1BD",
+  titleColor: "#57d5f4",
+  textColor: "#333",
   onLineColor: "#00bb00",
   offLineColor: "#ff0000",
   smallMargin: "5px",
@@ -16,5 +18,8 @@ export const ThemeKaluza = {
   largePadding: "20px",
   xLargePadding: "40px",
   xxLargePadding: "80px",
-  filterBarHeight: "60px"
+  filterBarHeight: "60px",
+  deviceIconSize: "80px",
+  chargeBgColor: "#57d5f4",
+  menuHoverColor: "#57d5f4",
 };

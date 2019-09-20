@@ -5,7 +5,6 @@ import { ThemeProvider } from 'styled-components';
 import DeviceListPage from './pages/DeviceListPage';
 import { GlobalStyle } from './styles/globalStyles';
 import { ThemeKaluza }  from './styles/theme';
-import './App.css';
 
 function App() {
   const store = configureStore();
