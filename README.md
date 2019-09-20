@@ -1,3 +1,5 @@
+# Kaluza device list SPA exercise
+
 ![Kaluza device list](kaluza-device-list.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -28,6 +30,7 @@ Used to manage the app state. In this case we are storing the following info in 
 - error: in case there's an error fetching the devices store the error
 - typeDisplayed: the current device type that is being displayed in the list. In case is `null` all device types will be displayed.
 - filter: the value of current filter used for the device status. Values could be `All`,`Online`,`Offline`
+![Redux state](redux-state.png)
 ### Styled Components
 ### Other dependencies used
 #### Redux-thunk
