@@ -1,7 +1,7 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
-import { mapNameToType, changeTypeDevices } from '../../state/ducks/devices';
+import { getNameOfType, changeTypeDevices } from '../../state/ducks/devices';
 import { Menu, MenuEntry } from './DeviceMenuStyledComponents';
 
 // Groups array of objects by value
@@ -23,7 +23,7 @@ const DeviceMenu = (props) => {
   for (const [key, value] of Object.entries(groupedByType)) {
     menuNodes.push(
       <MenuEntry key={key} onClick={() => {onClickType(key)}}>
-        {mapNameToType[key]} ({value.length})
+        {getNameOfType(key)} ({value.length})
       </MenuEntry>
     );
   }

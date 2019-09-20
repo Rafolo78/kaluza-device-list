@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import DeviceCard from '../deviceCard/DeviceCard';
-import { mapNameToType } from '../../state/ducks/devices';
+import { getNameOfType } from '../../state/ducks/devices';
 import { filters } from '../../state/ducks/filters';
 
 const getVisibleDevices = (devices, filter) => {
@@ -32,7 +32,7 @@ const DeviceList = (props) => {
   }
   const visibleDevices = getVisibleDevices(devices, props.filter)
   const devicesNodes = visibleDevices.map((device, index) => {
-    const deviceName = mapNameToType[device.type];
+    const deviceName = getNameOfType(device.type);
     return (
       <DeviceCard
         key={index}

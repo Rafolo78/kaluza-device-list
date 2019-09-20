@@ -28,7 +28,7 @@ export const DeviceCardWrapper = styled.div`
     content: "";
     position: absolute;
     left: 20px;
-    top: 15px;
+    top: 20px;
     width: ${props => props.theme.deviceIconSize};
     height: ${props => props.theme.deviceIconSize};
     border-radius: 50%;
@@ -37,7 +37,7 @@ export const DeviceCardWrapper = styled.div`
 
     ${props => !props.isOnline && css`
       filter: grayscale(100%);
-
+      opacity: 0.5;
     `}
   }
 `;
@@ -56,16 +56,39 @@ export const DeviceId = styled.div`
   margin-bottom: ${props => props.theme.mediumMargin};
 `;
 
+
+
+export const Indicators = styled.div`
+  display: flex;
+  align-items: center;
+`;
 export const LastPacket = styled.div`
   font-size: 0.85em;
-  margin-right: auto;
+  margin-right: ${props => props.theme.largeMargin};
   span {
     font-weight: bold;
   }
 `;
+export const OnlineStatus = styled.div`
+  text-transform: uppercase;
+  font-size: 0.7em;
+  color: ${props => props.isOnline ? props.theme.onLineColor : props.theme.offLineColor};
+  position: relative;
+  margin-left: auto;
+  &:before {
+    content: "";
+    position: absolute;
+    width: ${props => props.theme.onlineStatusIconSize};
+    height: ${props => props.theme.onlineStatusIconSize};
+    background-color: ${props => props.isOnline ? props.theme.onLineColor : props.theme.offLineColor}
+    left: -15px;
+    top: 2px;
+    border-radius: 50%;
+  }
+`;
+
 export const Charge = styled.div`
   position: relative;
-  margin-right: ${props => props.theme.largeMargin};
   border-radius: 2em;
   padding: 5px 15px 5px 35px;
   background-color: ${props => props.theme.chargeBgColor};
@@ -84,16 +107,5 @@ export const Charge = styled.div`
     background: url(${battery}) no-repeat;
     background-size: contain;
   }
-
-`;
-
-export const Indicators = styled.div`
-  display: flex;
-  align-items: center;
-`;
-export const OnlineStatus = styled.div`
-  text-transform: uppercase;
-  font-size: 0.75em;
-  color: ${props => props.isOnline ? props.theme.onLineColor : props.theme.offLineColor}
 
 `;

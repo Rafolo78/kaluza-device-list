@@ -7,10 +7,13 @@ const FETCH_FAILURE = 'kaluza-device-list/devices/FETCH_FAILURE';
 const CHANGE_TYPE = 'kaluza-device-list/devices/CHANGE_TYPE';
 
 //NOTE: the name of the device should come from the backend
-export const mapNameToType = {
+const mapNameToType = {
   SMART_CHARGER: "Smart Charger",
   V2G_CHARGER: "V2G Charger"
 };
+
+// Returns the name of the device, if the cannot be retrieved return the type
+export const getNameOfType = type => (type in mapNameToType) ? mapNameToType[type] : type;
 
 // Initial state
 const initialState = {
