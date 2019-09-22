@@ -22,6 +22,7 @@ const ConnectionFilter = (props) => {
 
 ConnectionFilter.propTypes = {
   filter: PropTypes.string.isRequired,
+  applyFilter: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => {

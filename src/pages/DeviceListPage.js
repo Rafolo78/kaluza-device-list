@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux';
 import { fetchDevices } from '../state/ducks/devices';
@@ -33,6 +34,10 @@ class DeviceListPage extends React.Component {
     );
   }
 }
+
+DeviceListPage.propTypes = {
+  fetchDevices: PropTypes.func.isRequired
+};
 
 
 const mapDispatchToProps = dispatch => bindActionCreators({

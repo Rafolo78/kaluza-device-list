@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
 import { getNameOfType, changeTypeDevices } from '../../state/ducks/devices';
@@ -35,6 +36,12 @@ const DeviceMenu = (props) => {
     </Menu>
   );
 }
+
+
+DeviceMenu.propTypes = {
+  deviceList: PropTypes.array.isRequired,
+  changeTypeDevices: PropTypes.func.isRequired
+};
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   changeTypeDevices
