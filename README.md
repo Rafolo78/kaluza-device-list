@@ -67,9 +67,9 @@ Here we store the style component theme, global styles and everything related to
 
 ## Suggesting further improvements
 I was not sure if these should be part of the MVP, because of time constraints I decided not to include them and just leave some notes here about them.
-**`Make the app Responsive`**
+####`Make the app Responsive`
 It was not mentioned in the exercise description so I decided to make this work for desktop resolutions. In "real life" the should be displayed correctly in mobile devices.
-**`Loading spinner while fetching devices`**
+####`Loading spinner while fetching devices`
 This should be nice, I have left the boolean flag implemented in the redux state. So the idea is that while the flag `loading` is true render a loading spinner, otherwise try to render the device list. It was not worth it because the loading time is very fast since we are fetching from our local server.
-**`Creating and empty state when there are no devices returned`**
+####`Creating and empty state when there are no devices returned`
 This should be creating a nice message saying there are no devices to display
